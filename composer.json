@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "webdevstudios/cmb2": "^2.0",
-             "afragen/github-updater": "^4.6"
+        "afragen/github-updater": "^4.6"
     },
     "license": "MIT",
     "authors": [
@@ -14,7 +14,8 @@
         }
     ],
     "autoload": {
-    "files": ["vendor/webdevstudios/cmb2/init.php"]
+    "files": ["lib/cmb2/init.php"],
+        "files": ["wp-content/plugins/github-updater/github-updater.php"]
   },
   "extra": {
     "installer-paths": {
