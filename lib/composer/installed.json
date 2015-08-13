@@ -1,0 +1,186 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.0.21",
+        "version_normalized": "1.0.21.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+            "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+            "shasum": ""
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2015-02-18 17:17:01",
+        "type": "composer-installer",
+        "extra": {
+            "class": "Composer\\Installers\\Installer",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Composer\\Installers\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "http://composer.github.com/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Hurad",
+            "MODX Evo",
+            "OXID",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "fuelphp",
+            "grav",
+            "installer",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "webdevstudios/cmb2",
+        "version": "v2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/WebDevStudios/CMB2.git",
+            "reference": "4aeaa0db3afd9cef6aef47205f41cbe127a57035"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/4aeaa0db3afd9cef6aef47205f41cbe127a57035",
+            "reference": "4aeaa0db3afd9cef6aef47205f41cbe127a57035",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">5.2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "suggest": {
+            "composer/installers": "~1.0"
+        },
+        "time": "2015-08-05 16:03:31",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "WebDevStudios",
+                "email": "contact@webdevstudios.com",
+                "homepage": "https://github.com/WebDevStudios",
+                "role": "Developer"
+            }
+        ],
+        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+        "homepage": "https://github.com/WebDevStudios/CMB2",
+        "keywords": [
+            "metabox",
+            "plugin",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "afragen/github-updater",
+        "version": "4.6.2",
+        "version_normalized": "4.6.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/afragen/github-updater.git",
+            "reference": "5a39bf3a9066b1f40736e51de01d3c6d8a35702c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/afragen/github-updater/zipball/5a39bf3a9066b1f40736e51de01d3c6d8a35702c",
+            "reference": "5a39bf3a9066b1f40736e51de01d3c6d8a35702c",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "~1.0",
+            "php": ">=5.3"
+        },
+        "time": "2015-07-22 22:36:24",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPLv2"
+        ],
+        "authors": [
+            {
+                "name": "Andy Fragen",
+                "email": "andy@thefragens.com",
+                "homepage": "http://thefragens.com",
+                "role": "Developer"
+            }
+        ],
+        "keywords": [
+            "plugin",
+            "updater",
+            "wordpress"
+        ]
+    }
+]
