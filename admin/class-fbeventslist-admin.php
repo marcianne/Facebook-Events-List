@@ -108,6 +108,8 @@ class Fbeventslist_Admin {
 	 
 	 public function fbeventslist_composer() {
 	 require('../lib/autoload.php');
+	 require('../wp-content/github-updater/github-updater.php');
+	  require('../wp-content/cmb2/init.php');
 	 }
 
 
