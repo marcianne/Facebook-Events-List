@@ -110,6 +110,7 @@ class Fbeventslist_Admin {
 	 require('../lib/autoload.php');
 	 require('../wp-content/github-updater/github-updater.php');
 	  require('../wp-content/cmb2/init.php');
+	  echo 'loaded...';
 	 }
 
 
