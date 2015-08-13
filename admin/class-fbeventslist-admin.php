@@ -100,4 +100,15 @@ class Fbeventslist_Admin {
 
 	}
 
+	/**
+	 * Autoload composer dependencies cmb2 and github-updater
+	 *
+	 * @since    1.0.0
+	 */
+	 
+	 public function fbeventslist_composer() {
+	 require('../lib/autoload.php');
+	 }
+
+
 }
