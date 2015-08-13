@@ -15,6 +15,10 @@
     ],
       "config": {
         "vendor-dir": "lib"
-    } 
-    
+    }, 
+    "autoload": {
+    "files": ["wp-content/plugins/cmb2/init.php"],
+    "files": ["wp-content/plugins/github-updater/github-updater.php"]
+  }
+
 }

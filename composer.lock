@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "62d7d3cad03091aa0b2a627039845df2",
+    "hash": "961f3629a45430229e0690b4b866b831",
     "packages": [
         {
             "name": "afragen/github-updater",
