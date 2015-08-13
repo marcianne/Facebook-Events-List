@@ -1,7 +1,7 @@
 {
     "name": "marcianne/facebook-events-list",
     "description": "Support for Facebook-Events-List",
-    "type": "library",
+    "type": "wordpress-plugin",
     "require": {
         "webdevstudios/cmb2": "^2.0",
         "afragen/github-updater": "^4.6"
@@ -13,16 +13,8 @@
             "email": "oday.marcianne@me.com"
         }
     ],
-    "autoload": {
-    "files": ["lib/cmb2/init.php"],
-        "files": ["wp-content/plugins/github-updater/github-updater.php"]
-  },
-  "extra": {
-    "installer-paths": {
-      "lib/{$name}/": ["webdevstudios/cmb2"]
-    }
-  },
       "config": {
         "vendor-dir": "lib"
     } 
+    
 }
