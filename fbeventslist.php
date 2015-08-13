@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Facebook Events List
  * Plugin URI:        https://github.com/marcianne/Facebook-Events-List
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       An unbranded and minimally-styled list of facebook events with options page.
  * Version:           1.0.0
  * Author:            Marcianne O'Day
  * Author URI:        http://www.marcianneoday.com
