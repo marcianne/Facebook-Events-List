@@ -26,6 +26,8 @@
  * GitHub Plugin URI: marcianne/Facebook-Events-List
  */
 
+echo "facebook events list is loaded";
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
