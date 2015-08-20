@@ -51,7 +51,7 @@ require_once( FBEL_PLUGIN_PATH . "wp-content/plugins/cmb2/init.php");
 
 // if it's not already loaded by another plugin, add mustardbees cmb-field-select2 https://github.com/mustardBees/cmb-field-select2
 if (! function_exists('pw_select2_enqueue')){ // pw_select2_enqueue() is just an arbitrary funciton in cmb-field-select2
-require_once( FBEL_PLUGIN_PATH . 'cmb-field-select2/cmb-field-select2.php');
+require_once( FBEL_PLUGIN_PATH . '/cmb-field-select2.php');
 }
 }
 
