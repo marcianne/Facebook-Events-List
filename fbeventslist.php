@@ -14,8 +14,8 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       fbeventslist
  * Domain Path:       /languages
- * GitHub Plugin URI: marcianne/Facebook-Events-List
- * GitHub Branch: 	master
+*  GitHub Plugin URI: https://github.com/marcianne/Facebook-Events-List
+*  GitHub Branch:     master
  */
  // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -34,7 +34,7 @@ require_once( FBEL_PLUGIN_PATH . "wp-content/plugins/cmb2/init.php");
 }
 // load github updater from composer plugin dir if it's not already loaded
 if ( ! class_exists( 'WPUpdatePhp' ) ) {
-require_once ( FBEL_PLUGIN_PATH . '/wp-content/plugins/github-updater/github-updater.php' );
+// require_once ( FBEL_PLUGIN_PATH . '/wp-content/plugins/github-updater/github-updater.php' );
 }
 // if it's not already loaded by another plugin, add mustardbees cmb-field-select2 https://github.com/mustardBees/cmb-field-select2
 if (! function_exists('pw_select2_enqueue')){ // pw_select2_enqueue() is just an arbitrary funciton in cmb-field-select2
