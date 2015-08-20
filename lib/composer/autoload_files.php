@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $baseDir . '/wp-content/plugins/github-updater/github-updater.php',
+    $baseDir . '/wp-content/plugins/cmb2/init.php',
 );
