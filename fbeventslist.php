@@ -28,10 +28,10 @@ define( 'FBEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 function fbel_load_dependencies() {
 // Check to see if cmb2 is loaded, if not use composer version from plugin folder
 if ( ! class_exists( 'CMB2_Bootstrap_210', false ) ) {
-require_once( FBEL_PLUGIN_PATH . "/wp-content/plugins/cmb2/init.php");
+require_once( FBEL_PLUGIN_PATH . "wp-content/plugins/cmb2/init.php");
 }
 // load and instantiate github updater 
-	include_once(FBEL_PLUGIN_PATH . '/updater.php');
+	include_once(FBEL_PLUGIN_PATH . 'updater.php');
     if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
         $config = array(
             'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
@@ -51,7 +51,7 @@ require_once( FBEL_PLUGIN_PATH . "/wp-content/plugins/cmb2/init.php");
 
 // if it's not already loaded by another plugin, add mustardbees cmb-field-select2 https://github.com/mustardBees/cmb-field-select2
 if (! function_exists('pw_select2_enqueue')){ // pw_select2_enqueue() is just an arbitrary funciton in cmb-field-select2
-require_once( FBEL_PLUGIN_PATH . '/cmb-field-select2/cmb-field-select2.php');
+require_once( FBEL_PLUGIN_PATH . 'cmb-field-select2/cmb-field-select2.php');
 }
 }
 
