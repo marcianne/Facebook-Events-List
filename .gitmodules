@@ -1,7 +1,6 @@
 [submodule "lib/cmb-field-select2"]
 	path = lib/cmb-field-select2
 	url = https://github.com/mustardBees/cmb-field-select2.git
-	
-[submodule "lib/CMB2"]
-	path = lib/CMB2
+[submodule "lib/cmb2"]
+	path = lib/cmb2
 	url = https://github.com/WebDevStudios/CMB2.git
