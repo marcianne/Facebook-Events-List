@@ -4,3 +4,6 @@
 [submodule "lib/cmb2"]
 	path = lib/cmb2
 	url = https://github.com/WebDevStudios/CMB2.git
+[submodule "lib/updater"]
+	path = lib/updater
+	url = https://github.com/radishconcepts/WordPress-GitHub-Plugin-Updater.git

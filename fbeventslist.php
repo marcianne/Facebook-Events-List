@@ -31,7 +31,7 @@ if ( ! class_exists( 'CMB2_Bootstrap_210', false ) ) {
 require_once( FBEL_PLUGIN_PATH . "lib/cmb2/init.php");
 }
 // load and instantiate github updater 
-	include_once(FBEL_PLUGIN_PATH . 'lib/updater.php');
+	include_once(FBEL_PLUGIN_PATH . 'lib/updater/updater.php');
     if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
         $config = array(
             'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
