@@ -7,7 +7,7 @@
  * Plugin Name:       Facebook Events List
  * Plugin URI:        https://github.com/marcianne/Facebook-Events-List
  * Description:       An unbranded, minimally-styled list of facebook events with options page.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Marcianne O'Day
  * Author URI:        http://www.marcianneoday.com
  * License:           GPL-2.0+
