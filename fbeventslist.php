@@ -381,7 +381,7 @@ $tz2_start_time = date_format($date, 'g:ia');
 }
 $eid = $events['data'][$event_index]['id'];
 $event_url = "http://facebook.com/{$eid}/"; 
-$pic_sm = "https://graph.facebook.com/{$eid}/picture?type=normal";
+$pic_sm = "https://graph.facebook.com/{$eid}/picture?type=medium";
 $name = $events['data'][$event_index]['name'];
 $description = isset($events['data'][$event_index]['description']) ? $events['data'][$event_index]['description'] : "";
 $description_excerpt = substr($description, 0, $desc_length)."<a href='https://www.facebook.com/events/{$eid}' target='_blank' class='inline_link'>".$readmore_link ."</a>";
