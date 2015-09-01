@@ -16,7 +16,7 @@
   },
 
   "autoload": {
-    "files": ["vendor/cmb2/init.php"]
+    "files": ["lib/cmb2/init.php"]
   },
   "extra": {
     "installer-paths": {
