@@ -27,7 +27,7 @@ define( 'FBEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 function fbel_load_dependencies() {
 // Check to see if cmb2 is loaded, if not use composer version from plugin folder
-if ( ! class_exists( 'CMB2_Bootstrap_210', false ) ) {
+if ( ! function_exists( 'cmb2_metabox_form') ) {
 require_once( FBEL_PLUGIN_PATH . "lib/cmb2/init.php");
 }
 // load and instantiate github updater 
