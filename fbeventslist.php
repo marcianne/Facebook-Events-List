@@ -171,7 +171,7 @@ class fbel_Admin {
 		?>
 		<div class="wrap cmb2-options-page <?php echo $this->key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-			<div id="fbel_instructions">To activate the Facebook Events List, register a facebook app for your facebook page & enter the app secret and app id below.  to output the calendar, either add it as a widget, or place the [fbel_cal] shortcode in a Wordpress template file in the location where you'd like it to appear.</div>
+			<div id="fbel_instructions">To activate the Facebook Events List, register a facebook app for your facebook page & enter the app secret and app id below.  to output the list, either add it as a widget, or place the [fbel_cal] shortcode in a Wordpress template file in the location where you'd like it to appear.</div>
 			<?php cmb2_metabox_form( $this->metabox_id, $this->key, array( 'cmb_styles' => false ) ); ?>
 		</div>
 		<?php
@@ -253,7 +253,7 @@ class fbel_Admin {
             
             $cmb->add_field( array(
             'name' => __( 'Default Styling:', 'fbel' ),
-            'desc' => __( 'Basic FB Calendar has minimal styling built in by design. To completely disable default styles, check this box.', 'fbel' ),
+            'desc' => __( 'Events list has minimal styling built in by design. To completely disable default styles, check this box.', 'fbel' ),
             'id'   => 'disable_styles',
             'type' => 'radio',
             'options' => array( 'disable'=>'Disable', 'enable'=>'Enable')
@@ -462,8 +462,8 @@ class fbel_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'fbel_widget', // Base ID
-			__( 'Basic Facebook Calendar', 'text_domain' ), // Name
-			array( 'description' => __( 'Display the a list of Facebook events. Uses settings from "Basic Facebook Calendar" options page.', 'text_domain' ), ) // Args 
+			__( 'Facebook Events List', 'text_domain' ), // Name
+			array( 'description' => __( 'Display the a list of Facebook events. Uses settings from "Facebook Events List" options page.', 'text_domain' ), ) // Args 
 		);
 	}
 
