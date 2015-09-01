@@ -7,7 +7,7 @@
  * Plugin Name:       Facebook Events List
  * Plugin URI:        https://github.com/marcianne/Facebook-Events-List
  * Description:       An unbranded, minimally-styled list of facebook events with options page.
- * Version:           1.0.9
+ * Version:           1.2
  * Author:            Marcianne O'Day
  * Author URI:        http://www.marcianneoday.com
  * License:           GPL-2.0+
@@ -222,7 +222,7 @@ class fbel_Admin {
             'description' => 'Description',
             'place' => 'Location',
             'start_time' => 'Start Time',
-//             'end_time' => 'End Time',
+         'end_time' => 'End Time',
             'cover' => 'Thumbnail',
             ),
             ) );
@@ -349,25 +349,36 @@ if(fbel_get_option('event_fields')){
 $fields = implode(',', fbel_get_option('event_fields')); // get all the selected event fields to retrieve in the JSON link
 }
 else {
-$fields="description,end_time,place,name,id,start_time,timezone,cover"; // default display, only if fields aren't specified in options page
+$fields="description,end_time,place,name,id,start_time,timezone,cover,picture"; // default display, only if fields aren't specified in options page
 }
 $fbv = "v2.4";
 $json = file_get_contents("https://graph.facebook.com/{$fbv}/{$fb_page_id}/events?fields={$fields}&access_token={$app_id}|{$app_secret}"); // get contents of JSON feed using link
-$events = json_decode($json, true, 512, JSON_BIGINT_AS_STRING); // decode JSON events list
+$events = json_decode($json, true, 512, JSON_BIGINT_AS_STRING); // decode JSON 
+
+// echo "https://graph.facebook.com/{$fbv}/{$fb_page_id}/events?fields={$fields}&access_token={$app_id}|{$app_secret}";
+
+$event_array = file_get_contents("https://graph.facebook.com/{$fbv}/{$fb_page_id}/events?fields={$fields}&access_token={$app_id}|{$app_secret}");
+
+
+
+
+
 $event_count = fbel_get_option('events_num'); // determine how many events to display, set on options page
 /*
 ?>
+
 <div class="calendar_title">
 <a href="<?php ?>">
 <?php echo fbel_get_option('cal_title'); ?>
 </a></div> <!~~ title container, outside events loop --> 
 <?php
 */
+
 for($event_index=0; $event_index<$event_count; $event_index++){
 
 // get events date & time from facebook
 
-$start_date = date( 'D, F jS', strtotime($events['data'][$event_index]['start_time']));
+$start_date = date( 'l, F jS', strtotime($events['data'][$event_index]['start_time']));
 $start_time  = date( 'H:i e', strtotime($events['data'][$event_index]['start_time']) );
 
 // set timezone to UTC (do I need this step?)
@@ -381,7 +392,7 @@ $tz2_start_time = date_format($date, 'g:ia');
 }
 $eid = $events['data'][$event_index]['id'];
 $event_url = "http://facebook.com/{$eid}/"; 
-$pic_sm = "https://graph.facebook.com/{$eid}/picture?type=medium";
+$pic_sm = isset($events['data'][$event_index]['cover']['source']) ? $events['data'][$event_index]['cover']['source'] : "";
 $name = $events['data'][$event_index]['name'];
 $description = isset($events['data'][$event_index]['description']) ? $events['data'][$event_index]['description'] : "";
 $description_excerpt = substr($description, 0, $desc_length)."<a href='https://www.facebook.com/events/{$eid}' target='_blank' class='inline_link'>".$readmore_link ."</a>";
@@ -398,7 +409,10 @@ $event_times = $tz1_start_time. " ". $tz_id_1 . "/".$tz2_start_time. " ". $tz_id
 
 if($place_name && $city && $street && $state && $zip){
 $location="{$place_name}<br>{$street}<br> {$city}, {$state} {$zip}";
-} elseif ($place_name) {
+} elseif ($place_name && $state) {
+$location = "{$place_name} <br> {$state}";
+} 
+elseif ($place_name) {
 $location = "{$place_name}";
 } else {
 $location = "<a href={$event_url}>Location Details</a>";
@@ -477,7 +491,7 @@ class fbel_Widget extends WP_Widget {
 		}
 	    echo "<div id='fb_events_container'>";
 		echo do_shortcode('[basic_fb_calendar]');
-		echo "</div> <!-- end #fb_events_container -->";
+		echo "</div><!-- end #fb_events_container -->";
 		
 		echo $args['after_widget'];
 	}
@@ -490,7 +504,7 @@ class fbel_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Events', 'text_domain' );
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
