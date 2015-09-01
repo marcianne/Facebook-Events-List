@@ -1,0 +1,14 @@
+{
+    "name": "marcianne/facebook-events-list",
+    "description": "dependencies for running fbel wp plugin.",
+    "type": "library",
+    "require": {
+        "webdevstudios/cmb2": "^2.1"
+    },
+    "authors": [
+        {
+            "name": "Marcianne O'Day",
+            "email": "oday.marcianne@me.com"
+        }
+    ]
+}
