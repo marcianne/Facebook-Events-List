@@ -14,9 +14,14 @@
   },
 
   "autoload": {
-    "files": ["lib/cmb2/init.php"]
+    "files": ["lib/webdevstudios/cmb2/init.php"]
   },
 "config": {
   "vendor-dir": "lib"
+},
+"extra": {
+    "installer-paths": {
+        "lib/{$name}/": ["type:wordpress-plugin", "type:wordpress-theme"]
+    }
 }
 }
