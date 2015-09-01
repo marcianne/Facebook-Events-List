@@ -4,6 +4,7 @@ float: left;
 clear: both;
 height: auto;
 display: block;
+margin-bottom: 10px;
 }
 
 .single_event_container div {
@@ -39,7 +40,7 @@ clear: both;
 
 }
 .event_times {
-
+padding-bottom: 10px;
 
 }
 .event_location {
@@ -49,12 +50,10 @@ margin-bottom: 10px;
 }
 
 div.event_desc {
-
-
+margin-bottom: 10px;
 }
 
-#fb_events_container > div > figure > a > img {
-margin-right: 10px;
+.event_pic {
 margin-bottom: 10px;
 max-width: 100%;
 min-width: 117px;
