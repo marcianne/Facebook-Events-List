@@ -27,7 +27,7 @@ define( 'FBEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 function fbel_load_dependencies() {
 // Check to see if cmb2 is loaded, if not use composer version from plugin folder
-require_once( FBEL_PLUGIN_PATH . "lib/composer/autoload.php");
+require_once( FBEL_PLUGIN_PATH . "lib/autoload.php");
 
 // load and instantiate github updater 
 	include_once(FBEL_PLUGIN_PATH . 'lib/updater/updater.php');
