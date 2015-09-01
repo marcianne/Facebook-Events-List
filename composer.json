@@ -2,13 +2,28 @@
     "name": "marcianne/facebook-events-list",
     "description": "dependencies for running fbel wp plugin.",
     "type": "library",
-    "require": {
-        "webdevstudios/cmb2": "^2.1"
-    },
+  
     "authors": [
         {
             "name": "Marcianne O'Day",
             "email": "oday.marcianne@me.com"
         }
-    ]
+    ],
+ "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "v1.0.12",
+    "webdevstudios/cmb2": "dev-master"
+  },
+
+  "autoload": {
+    "files": ["vendor/cmb2/init.php"]
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$name}/": ["webdevstudios/cmb2"]
+    }
+  },
+"config": {
+  "vendor-dir": "lib"
+}
 }
