@@ -23,7 +23,9 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'FBEL_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FBEL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 // Includes & dependencies
+if (! function_exists('cmb2_init')){
 require( FBEL_PLUGIN_PATH . 'lib/webdevstudios/cmb2/init.php');
+}
 // require options page fields & setup
 require( FBEL_PLUGIN_PATH . 'fbel-options.php');
 // if it's not already loaded by another plugin, add mustardbees cmb-field-select2 https://github.com/mustardBees/cmb-field-select2
