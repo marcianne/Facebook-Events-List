@@ -83,7 +83,6 @@ $events = json_decode($json, true, 512, JSON_BIGINT_AS_STRING); // decode JSON
 $event_array = file_get_contents("https://graph.facebook.com/{$fbv}/{$fb_page_id}/events?fields={$fields}&access_token={$app_id}|{$app_secret}");
 $event_count = fbel_get_option('events_num'); // determine how many events to display, set on options page
 $events = $events['data'];
-asort($events);
 for($event_index=$event_count; $event_index>-1; $event_index--){
 // get events date & time from facebook
 $start_date = date( 'l, F jS', strtotime($events[$event_index]['start_time']));
