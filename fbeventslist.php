@@ -82,22 +82,12 @@ $json = file_get_contents("https://graph.facebook.com/{$fbv}/{$fb_page_id}/event
 $events = json_decode($json, true, 512, JSON_BIGINT_AS_STRING); // decode JSON 
 $event_array = file_get_contents("https://graph.facebook.com/{$fbv}/{$fb_page_id}/events?fields={$fields}&access_token={$app_id}|{$app_secret}");
 $event_count = fbel_get_option('events_num'); // determine how many events to display, set on options page
-/*
-?>
-
-<div class="event_list_title">
-<a href="<?php ?>">
-<?php echo fbel_get_option('cal_title'); ?>
-</a></div> <!~~ title container, outside events loop --> 
-<?php
-*/
-
-for($event_index=0; $event_index<$event_count; $event_index++){
-
+$events = $events['data'];
+asort($events);
+for($event_index=$event_count; $event_index>-1; $event_index--){
 // get events date & time from facebook
-
-$start_date = date( 'l, F jS', strtotime($events['data'][$event_index]['start_time']));
-$start_time  = date( 'H:i e', strtotime($events['data'][$event_index]['start_time']) );
+$start_date = date( 'l, F jS', strtotime($events[$event_index]['start_time']));
+$start_time  = date( 'H:i e', strtotime($events[$event_index]['start_time']) );
 
 // set timezone to UTC (do I need this step?)
 $date = date_create($start_time, timezone_open('Etc/GMT+0'));
@@ -108,18 +98,18 @@ if ($tz_2){
 date_timezone_set($date, timezone_open($tz_2));
 $tz2_start_time = date_format($date, 'g:ia');
 }
-$eid = $events['data'][$event_index]['id'];
+$eid = $events[$event_index]['id'];
 $event_url = "http://facebook.com/{$eid}/"; 
-$pic_sm = isset($events['data'][$event_index]['cover']['source']) ? $events['data'][$event_index]['cover']['source'] : "";
-$name = $events['data'][$event_index]['name'];
-$description = isset($events['data'][$event_index]['description']) ? $events['data'][$event_index]['description'] : "";
+$pic_sm = isset($events[$event_index]['cover']['source']) ? $events[$event_index]['cover']['source'] : "";
+$name = $events[$event_index]['name'];
+$description = isset($events[$event_index]['description']) ? $events[$event_index]['description'] : "";
 $description_excerpt = substr($description, 0, $desc_length)."<a href='https://www.facebook.com/events/{$eid}' target='_blank' class='inline_link'>".$readmore_link ."</a>";
-$place_name = isset($events['data'][$event_index]['place']['name']) ? $events['data'][$event_index]['place']['name'] : "";
-$city = isset($events['data'][$event_index]['place']['location']['city']) ? $events['data'][$event_index]['place']['location']['city'] : "";
-$street = isset($events['data'][$event_index]['place']['location']['street']) ? $events['data'][$event_index]['place']['location']['street'] : "";
-$country = isset($events['data'][$event_index]['place']['location']['country']) ? $events['data'][$event_index]['place']['location']['country'] : "";
-$state = isset($events['data'][$event_index]['place']['location']['zip']) ? $events['data'][$event_index]['place']['location']['state'] : "";
-$zip = isset($events['data'][$event_index]['place']['location']['zip']) ? $events['data'][$event_index]['place']['location']['zip'] : "";
+$place_name = isset($events[$event_index]['place']['name']) ? $events[$event_index]['place']['name'] : "";
+$city = isset($events[$event_index]['place']['location']['city']) ? $events[$event_index]['place']['location']['city'] : "";
+$street = isset($events[$event_index]['place']['location']['street']) ? $events[$event_index]['place']['location']['street'] : "";
+$country = isset($events[$event_index]['place']['location']['country']) ? $events[$event_index]['place']['location']['country'] : "";
+$state = isset($events[$event_index]['place']['location']['zip']) ? $events[$event_index]['place']['location']['state'] : "";
+$zip = isset($events[$event_index]['place']['location']['zip']) ? $events[$event_index]['place']['location']['zip'] : "";
 $event_times = $tz1_start_time. " ". $tz_id_1;
 if ($tz_2){
 $event_times = $tz1_start_time. " ". $tz_id_1 . "/".$tz2_start_time. " ". $tz_id_2;
